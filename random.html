@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		random image loader|Code White Web
+	</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+h1 {
+  color: blue;
+  font-family: verdana;
+  font-size: 300%;
+}
+h2 {
+  color: red;
+  font-family: courier;
+  font-size: 160%;
+}
+img {
+  border: 1px solid rgb(255, 0, 0);
+}
+</style>
+
+</head>
+
+<body>
+	<h1>Random Image loader with auto loading...</h1>
+	<h2>Reloads every 10 second</h2>
+
+<img id="image" src="https://source.unsplash.com/500x500" alt="Image" class="responsive" width="500" height="500">
+	<h2>Just a stupid website with stupid(small) code made by stupid people in a stupid PC... <br>Thank you for viewing this Stupid page<br>Image Credit :- Unsplash</h2>
+
+  <!---scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+      setInterval(function () { $('#image').load('#image'); }, 10000);});
+  </script>
+
+</body>
+</html>
