@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
+<!-- connecting favicon-->
+<link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/79645854" type="image/x-icon">
+  <title>
 		random image loader|Code White Web
 	</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .responsive {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
+  width: 500px;
+  height: 500px;
 }
 h1 {
   color: blue;
@@ -21,7 +22,7 @@ h2 {
   font-family: courier;
   font-size: 160%;
 }
-img {
+iframe {
   border: 1px solid rgb(255, 0, 0);
 }
 </style>
@@ -30,16 +31,19 @@ img {
 
 <body>
 	<h1>Random Image loader with auto loading...</h1>
-	<h2>Reloads every 10 second</h2>
+	<h2>Reloads every 3 second</h2>
 
-<img id="image" src="https://source.unsplash.com/500x500" alt="Image" class="responsive" width="500" height="500">
+<iframe frameborder="0" scrolling="no" width="100%" height="100%" class="responsive" src="https://source.unsplash.com/500x500" name="imgbox" id="image">
+   <p>iframes are not supported by your browser.</p>
+</iframe>
 	<h2>Just a stupid website with stupid(small) code made by stupid people in a stupid PC... <br>Thank you for viewing this Stupid page<br>Image Credit :- Unsplash</h2>
 
-  <!---scripts-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!---script-->
 <script>
-    $(document).ready(function () {
-      setInterval(function () { $('#image').load('#image'); }, 10000);});
+    function autoRefresh() {
+      document.getElementsByTagName('iframe')[0].src=document.getElementsByTagName('iframe')[0].src
+    }
+    setInterval('autoRefresh()', 3000);
   </script>
 
 </body>
